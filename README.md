@@ -3,3 +3,7 @@
 Made with my mentor at [Bloc](http://bloc.io).
 
 This is the link to Jaya's Bloccit web called **jaya-bloccit** [Jaya's Bloccit](http://jaya-bloccit.herokuapp.com/)
+
+Configuration references:
+config/application.yml
+Example: **config/application.example.yml**

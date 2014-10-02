@@ -12,7 +12,9 @@ class PostsController < ApplicationController
   end
 
   def create
+    miki = false
     @post = Post.new(params.require(:post).permit(:title, :body))
+     
     if @post.save
       flash[:notice] = "Post was saved."
       redirect_to @post
