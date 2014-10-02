@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+#before_action :create
+
   def index
     @posts = Post.all
   end
@@ -12,7 +15,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    miki = false
     @post = Post.new(params.require(:post).permit(:title, :body))
      
     if @post.save
