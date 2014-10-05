@@ -20,3 +20,6 @@
 
 #Ignore generated security token
 /config/initializers/secret_token.rb
+
+# Carrierwave image
+public/uploads
