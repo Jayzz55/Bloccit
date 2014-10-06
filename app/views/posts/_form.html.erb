@@ -9,6 +9,7 @@
       </ul>
     </div>
   <% end %>
+
   <%= form_group_tag(post.errors[:title]) do %>
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control', placeholder: "Enter post title" %>
@@ -20,4 +21,5 @@
   <div class="form-group">
     <%= f.submit "Save", class: 'btn btn-success' %>
   </div>
+  
 <% end %>
