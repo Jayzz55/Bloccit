@@ -1,6 +1,6 @@
 <%= form_for [topic, post, comment] do |f| %>
-  <% comment.valid? %>
-  <% if comment.errors.any? %>
+ <% if flash[:error] %>
+    <% comment.valid? %>
     <div class="alert alert-danger">
       <h4>There are <%= pluralize(comment.errors.count, "error") %>.</h4>
       <ul>
