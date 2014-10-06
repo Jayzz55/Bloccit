@@ -1,9 +1,22 @@
-<%= form_for [topic, post, Comment.new] do |f| %>
-   <div class="form-group">
+<%= form_for [topic, post, comment] do |f| %>
+  <% comment.valid? %>
+  <% if comment.errors.any? %>
+    <div class="alert alert-danger">
+      <h4>There are <%= pluralize(comment.errors.count, "error") %>.</h4>
+      <ul>
+        <% comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <%= form_group_tag(comment.errors[:body]) do %>
      <%= f.label :body, 'Comments' %>
-     <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter comments" %>
-   </div>
+     <%= f.text_area :body, rows: 4, class: 'form-control', placeholder: "Enter comments" %>
+   <% end %>
    <div class="form-group">
      <%= f.submit "Save", class: 'btn btn-success' %>
    </div>
+
  <% end %>

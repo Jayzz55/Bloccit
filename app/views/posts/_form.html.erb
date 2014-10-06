@@ -1,4 +1,5 @@
 <%= form_for [topic, post] do |f| %>
+  <%= post.errors.full_messages %>
   <% if post.errors.any? %>
     <div class="alert alert-danger">
       <h4>There are <%= pluralize(post.errors.count, "error") %>.</h4>
