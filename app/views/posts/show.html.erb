@@ -16,3 +16,16 @@
     <% end %>
   </div>
 </div>
+
+<div class="media">
+  <div class="media-body">
+    <h3> Comments </h3>
+    <% @comments.each do |comment| %>
+      <%= comment.body %><br/>
+      <small>
+        submitted <%= time_ago_in_words(comment.created_at) %> ago by
+        <%= comment.user.name %><br/>
+      </small>
+    <% end %>
+  </div>
+</div>

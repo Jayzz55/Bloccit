@@ -10,6 +10,8 @@ group :production do
  
 group :development do
    gem 'sqlite3'
+   gem "better_errors"
+   gem 'binding_of_caller'
  end
 
 # Use SCSS for stylesheets
@@ -44,6 +46,7 @@ gem 'mini_magick'
 gem 'fog'
 
 gem 'will_paginate', '~> 3.0.5'
+
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

@@ -44,6 +44,7 @@ posts = Post.all
 100.times do
   Comment.create!(
     # user: users.sample,   # we have not yet associated Users with Comments
+    user: users.sample,
     post: posts.sample,
     body: Faker::Lorem.paragraph
   )
@@ -84,3 +85,23 @@ puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+
+20.times do
+  Post.create!(
+    user:   users.sample,
+    topic:  Topic.first,
+    title:  Faker::Lorem.sentence,
+    body:   Faker::Lorem.paragraph
+  )
+end
+posts = Post.all
+
+# Create Comments
+20.times do
+  Comment.create!(
+    # user: users.sample,   # we have not yet associated Users with Comments
+    user: users.sample,
+    post: Post.first,
+    body: Faker::Lorem.paragraph
+  )
+end
