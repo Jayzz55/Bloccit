@@ -35,7 +35,7 @@ gem 'devise'
 
 gem 'pundit'
 
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0.rc1'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
