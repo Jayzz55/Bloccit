@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     @comments = @post.comments.paginate(page: params[:page], per_page: 10)
-    @comment_new = current_user.comments.build
+
   end
 
   def new
