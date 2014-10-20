@@ -2,7 +2,7 @@ Bloccit::Application.routes.draw do
   devise_for :users
     resources :users
   resources :topics do
-    resources :posts, except: [:index]
+    resources :posts, except: [:index], controller: 'topics/posts'
   end
   resources :posts, only: [] do
     resources :comments, only: [:create, :destroy]
