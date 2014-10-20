@@ -19,6 +19,8 @@ group :test do
   gem 'capybara'
 end
 
+gem "unicorn-rails"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
