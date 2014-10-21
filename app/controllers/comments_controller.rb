@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @topic = @post.topic
     @comment = current_user.comments.build(comment_params)
     @comment.post = @post
-    @new_comment = Comment.new
+    @new_comment = current_user.comments.build
     authorize @comment
 
 
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     end
 
     respond_with(@comment) do |format|
-      format.html { redirect_to [@post.topic, @post] }
+      format.html { redirect_to [@post.topic, @post]}
     end
 
   end
