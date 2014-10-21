@@ -19,6 +19,10 @@ group :test do
   gem 'capybara'
 end
 
+gem 'pry-rails', :group => :development
+
+gem 'pry-rails', :group => :test
+
 gem "unicorn-rails"
 
 # Use SCSS for stylesheets
