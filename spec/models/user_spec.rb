@@ -5,7 +5,8 @@
    describe "#favorited(post)" do
       before do
        @user = create(:user)
-        @post = create(:post, user: @user)
+       binding.pry
+      @post = create(:post, user: @user)
      end
 
      it "returns `nil` if the user has not favorited the post" do

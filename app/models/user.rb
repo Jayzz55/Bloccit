@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
 
+  def self.miki
+    binding.pry
+  end
+
   def admin?
     role == 'admin'
   end
