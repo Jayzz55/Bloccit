@@ -6,16 +6,20 @@ class CommentsController < ApplicationController
     @topic = @post.topic
     @comment = current_user.comments.build(comment_params)
     @comment.post = @post
+    @new_comment = current_user.comments.build
     authorize @comment
 
 
     if @comment.save
       flash[:notice] = "Comment was saved."
-      redirect_to [@topic, @post]
     else
       flash[:error] = "There was an error saving the comment. Please try again."
-      redirect_to [@topic, @post]
     end
+
+    respond_with(@comment) do |format|
+      format.html { redirect_to [@post.topic, @post]}
+    end
+
   end
 
   def destroy
