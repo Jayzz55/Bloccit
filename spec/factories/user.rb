@@ -8,7 +8,7 @@ FactoryGirl.define do
    
 
       factory :user_with_post_and_comment do
-        after :build do |user|
+        after :create do |user|
           post = create(:post, user: user)
           comment = create(:comment, post: post, user: user)
       end
