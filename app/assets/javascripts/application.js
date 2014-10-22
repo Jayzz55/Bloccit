@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$(document).ajaxError(function(event, request) {
+  var msg = request.getResponseHeader('X-flash');
+  if (msg) alert(msg);
+});

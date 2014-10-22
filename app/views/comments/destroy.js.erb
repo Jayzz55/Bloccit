@@ -1,10 +1,8 @@
  <% if @comment.destroyed? %>
    $('#comment-' +<%= @comment.id %>).fadeOut(600);
    $('.js-comments-count').html("<%= @comment.user.comments.count %> comments");
-   $(document).ajaxError(function(event, request) {
-      var msg = request.getResponseHeader('X-flash');
-      if (msg) alert(msg);
-    });
  <% else %>
-   $('#comment-' +<%= @comment.id %>).prepend("<div class='alert alert-error'><%= flash[:error] %></div>");
+    $('#comment-' +<%= @comment.id %>).prepend("<div class='alert alert-error'><%= flash[:error] %></div>");
  <% end %>
+
+$('.alert').html("<%= escape_javascript(render partial: 'application/flash') %>")
