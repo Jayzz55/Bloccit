@@ -4,8 +4,8 @@
  
    describe "#favorited(post)" do
       before do
-       @user = create(:user)
-        @post = create(:post, user: @user)
+      @user = create(:user)
+      @post = create(:post, user: @user)
      end
 
      it "returns `nil` if the user has not favorited the post" do
@@ -21,9 +21,7 @@
     describe ".top_rated" do
  
     before do
-       @user1 = create(:user)
-       post = create(:post, user: @user1)
-       create(:comment, user: @user1, post: post)
+       @user1 = create(:user_with_post_and_comment)
  
        @user2 = create(:user)
        post = create(:post, user: @user2)

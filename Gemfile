@@ -19,6 +19,10 @@ group :test do
   gem 'capybara'
 end
 
+gem 'pry-rails', :group => :development
+
+gem 'pry-rails', :group => :test
+
 gem "unicorn-rails"
 
 # Use SCSS for stylesheets
@@ -59,6 +63,8 @@ gem 'newrelic_rpm'
 gem 'database_cleaner'
 
 gem 'factory_girl_rails', '~> 4.0'
+
+gem 'pry-debugger', '~> 0.2.3'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
