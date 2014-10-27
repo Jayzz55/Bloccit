@@ -1,8 +1,7 @@
 <% if @comment.valid? %>
   $('.js-comments').prepend("<%= escape_javascript(render(@comment)) %>");
   $('.new-comment').html("<%= escape_javascript(render partial: 'comments/form', locals: { post: @post, comment: @new_comment }) %>");
+  $('.flash').after("<%= escape_javascript(render partial: 'application/flash') %>");
 <% else %>
   $('.new-comment').html("<%= escape_javascript(render partial: 'comments/form', locals: { post: @post, comment: @comment }) %>");
 <% end %>
-
-$('.alert').html("<%= escape_javascript(render partial: 'application/flash') %>")
